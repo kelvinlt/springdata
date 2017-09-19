@@ -15,18 +15,46 @@ public class Jugador {
     private Integer numCanastasTotal;
     private Integer numAsistenciasTotal;
     private Integer numRebotesTotal;
-    private Posicion posicion;
+    private String posicion;
 
-    public Jugador() {
-    }
-
-    public Jugador(String name, LocalDate birthday, Integer numCanastasTotal, Integer numAsistenciasTotal, Integer numRebotesTotal, Posicion posicion) {
+    public Jugador(String name, LocalDate birthday, Integer numCanastasTotal, Integer numAsistenciasTotal, Integer numRebotesTotal, String posicion) {
         this.name = name;
         this.birthday = birthday;
         this.numCanastasTotal = numCanastasTotal;
         this.numAsistenciasTotal = numAsistenciasTotal;
         this.numRebotesTotal = numRebotesTotal;
         this.posicion = posicion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Jugador jugador = (Jugador) o;
+
+        if (id != null ? !id.equals(jugador.id) : jugador.id != null) return false;
+        if (name != null ? !name.equals(jugador.name) : jugador.name != null) return false;
+        if (birthday != null ? !birthday.equals(jugador.birthday) : jugador.birthday != null) return false;
+        if (numCanastasTotal != null ? !numCanastasTotal.equals(jugador.numCanastasTotal) : jugador.numCanastasTotal != null)
+            return false;
+        if (numAsistenciasTotal != null ? !numAsistenciasTotal.equals(jugador.numAsistenciasTotal) : jugador.numAsistenciasTotal != null)
+            return false;
+        if (numRebotesTotal != null ? !numRebotesTotal.equals(jugador.numRebotesTotal) : jugador.numRebotesTotal != null)
+            return false;
+        return posicion != null ? posicion.equals(jugador.posicion) : jugador.posicion == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
+        result = 31 * result + (numCanastasTotal != null ? numCanastasTotal.hashCode() : 0);
+        result = 31 * result + (numAsistenciasTotal != null ? numAsistenciasTotal.hashCode() : 0);
+        result = 31 * result + (numRebotesTotal != null ? numRebotesTotal.hashCode() : 0);
+        result = 31 * result + (posicion != null ? posicion.hashCode() : 0);
+        return result;
     }
 
     public Long getId() {
@@ -77,24 +105,11 @@ public class Jugador {
         this.numRebotesTotal = numRebotesTotal;
     }
 
-    public Posicion getPosicion() {
+    public String getPosicion() {
         return posicion;
     }
 
-    public void setPosicion(Posicion posicion) {
+    public void setPosicion(String posicion) {
         this.posicion = posicion;
-    }
-
-    @Override
-    public String toString() {
-        return "Jugador{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", birthday=" + birthday +
-                ", numCanastasTotal=" + numCanastasTotal +
-                ", numAsistenciasTotal=" + numAsistenciasTotal +
-                ", numRebotesTotal=" + numRebotesTotal +
-                ", posicion=" + posicion +
-                '}';
     }
 }

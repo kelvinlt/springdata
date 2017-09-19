@@ -12,13 +12,26 @@ public class Equipo {
     private String localidad;
     private LocalDate creacion;
 
-    public Equipo() {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Equipo equipo = (Equipo) o;
+
+        if (Id != null ? !Id.equals(equipo.Id) : equipo.Id != null) return false;
+        if (name != null ? !name.equals(equipo.name) : equipo.name != null) return false;
+        if (localidad != null ? !localidad.equals(equipo.localidad) : equipo.localidad != null) return false;
+        return creacion != null ? creacion.equals(equipo.creacion) : equipo.creacion == null;
     }
 
-    public Equipo(String name, String localidad, LocalDate creacion) {
-        this.name = name;
-        this.localidad = localidad;
-        this.creacion = creacion;
+    @Override
+    public int hashCode() {
+        int result = Id != null ? Id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (localidad != null ? localidad.hashCode() : 0);
+        result = 31 * result + (creacion != null ? creacion.hashCode() : 0);
+        return result;
     }
 
     public Long getId() {
