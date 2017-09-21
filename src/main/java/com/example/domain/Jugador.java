@@ -57,6 +57,8 @@ public class Jugador {
         return result;
     }
 
+    
+
     public Long getId() {
         return id;
     }

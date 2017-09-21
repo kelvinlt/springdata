@@ -15,9 +15,18 @@ public class JugadorService {
     private JugadorRepository jugadorRepository;
 
     public void testJugador(){
-        Jugador jugador1 = new Jugador("kelvin", LocalDate.of(1996,1,27),1,1,1,"aleron");
+        Jugador kelvin = new Jugador("kelvin", LocalDate.of(1996,1,27),1,6,5,"aleron");
 
-        jugadorRepository.save(jugador1);
+        jugadorRepository.save(kelvin);
+
+        Jugador saiden = new Jugador("saiden",LocalDate.of(1996,12,24),2,2,3,"base");
+
+        jugadorRepository.save(saiden);
+
+        Jugador sergi = new Jugador("sergi", LocalDate.of(1996, 11, 21),3,0,2,"pivot");
+
+        jugadorRepository.save(sergi);
+
     }
 
 }

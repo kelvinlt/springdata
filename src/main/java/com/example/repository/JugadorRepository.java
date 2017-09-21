@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface JugadorRepository extends JpaRepository<Jugador , Long>{
 
-    List<Jugador> findByNombre(String Nombre);
+    List<Jugador> findByName(String name);
 
     List<Jugador> findByNumCanastasTotalGreaterThanEqual(Integer numCanastasTotal);
 
