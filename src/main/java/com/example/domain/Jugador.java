@@ -17,6 +17,8 @@ public class Jugador {
     private Integer numRebotesTotal;
     private String posicion;
 
+
+
     public Jugador(String name, LocalDate birthday, Integer numCanastasTotal, Integer numAsistenciasTotal, Integer numRebotesTotal, String posicion) {
         this.name = name;
         this.birthday = birthday;
@@ -24,6 +26,22 @@ public class Jugador {
         this.numAsistenciasTotal = numAsistenciasTotal;
         this.numRebotesTotal = numRebotesTotal;
         this.posicion = posicion;
+    }
+
+    public Jugador() {
+    }
+
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", numCanastasTotal=" + numCanastasTotal +
+                ", numAsistenciasTotal=" + numAsistenciasTotal +
+                ", numRebotesTotal=" + numRebotesTotal +
+                ", posicion='" + posicion + '\'' +
+                '}' + System.lineSeparator();
     }
 
     @Override
@@ -57,7 +75,7 @@ public class Jugador {
         return result;
     }
 
-    
+
 
     public Long getId() {
         return id;
