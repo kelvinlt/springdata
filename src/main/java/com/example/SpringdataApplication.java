@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.service.EquipoService;
 import com.example.service.JugadorService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ public class SpringdataApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringdataApplication.class, args);
 
 		context.getBean(JugadorService.class).testJugador();
+
 
 	}
 }

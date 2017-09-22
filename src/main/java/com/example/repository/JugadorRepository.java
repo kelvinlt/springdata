@@ -1,5 +1,6 @@
 package com.example.repository;
 
+import com.example.domain.EstadisticasPosicion;
 import com.example.domain.Jugador;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,5 +29,13 @@ public interface JugadorRepository extends JpaRepository<Jugador , Long>{
             "avg(jugador.numRebotesTotal)" +
             " from Jugador jugador group by jugador.posicion")
     List<Object[]> AvgCanastasAsistenciasRebotesGroupByPosicion();
+
+    @Query("select new com.example.domain.EstadisticasPosicion" +
+            "(j.posicion," +
+            " avg (j.numCanastasTotal)," +
+            "avg (j.numAsistenciasTotal)," +
+            "avg (j.numRebotesTotal)) " +
+            "from Jugador j group by j.posicion")
+    List<EstadisticasPosicion> medias();
 
 }

@@ -34,6 +34,12 @@ public class Equipo {
         return result;
     }
 
+    public Equipo(String name, String localidad, LocalDate creacion) {
+        this.name = name;
+        this.localidad = localidad;
+        this.creacion = creacion;
+    }
+
     public Long getId() {
         return Id;
     }
