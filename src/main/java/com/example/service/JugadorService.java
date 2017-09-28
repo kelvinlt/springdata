@@ -20,24 +20,24 @@ public class JugadorService {
     private EquipoRepository equipoRepository;
 
     public void testJugador(){
-        Jugador kelvin = new Jugador("kelvin", LocalDate.of(1996,1,27),1,6,5,"aleron");
+        Jugador kelvin = new Jugador("Kelvin", LocalDate.of(1996,1,27),1,6,5,"alero");
         kelvin.setEquipo(equipoRepository.findByName("stucom"));
         jugadorRepository.save(kelvin);
 
 
-        Jugador saiden = new Jugador("saiden",LocalDate.of(1996,12,24),2,2,3,"base");
+        Jugador saiden = new Jugador("Saiden",LocalDate.of(1996,12,24),2,2,3,"base");
         saiden.setEquipo(equipoRepository.findByName("stucom"));
         jugadorRepository.save(saiden);
 
-        Jugador sergi = new Jugador("sergi", LocalDate.of(1996, 11, 21),3,0,2,"pivot");
+        Jugador sergi = new Jugador("Sergi", LocalDate.of(1996, 11, 21),3,0,2,"pivot");
         sergi.setEquipo(equipoRepository.findByName("stucom"));
         jugadorRepository.save(sergi);
 
-        Jugador aleix = new Jugador("aleix", LocalDate.of(1995,7,4),1,1,1,"aleron");
+        Jugador aleix = new Jugador("Aleix", LocalDate.of(1995,7,4),1,1,1,"alero");
         aleix.setEquipo(equipoRepository.findByName("stucom"));
         jugadorRepository.save(aleix);
 
-        Jugador zerus = new Jugador("zerus", LocalDate.of(1994,4,14),4,3,4,"base");
+        Jugador zerus = new Jugador("Zerus", LocalDate.of(1994,4,14),4,3,4,"base");
         zerus.setEquipo(equipoRepository.findByName("stucom"));
         jugadorRepository.save(zerus);
 
@@ -82,7 +82,45 @@ public class JugadorService {
         pote.setEquipo(equipoRepository.findByName("moscow 5"));
         jugadorRepository.save(pote);
 
+        Jugador pablo = new Jugador("pablo",LocalDate.of(1996,5,17),2,3,2,"pivot");
+        pablo.setEquipo(equipoRepository.findByName("sk telecom"));
+        jugadorRepository.save(pablo);
 
+        Jugador josep = new Jugador("josep",LocalDate.of(1996,3,8),3,5,4,"aleron");
+        josep.setEquipo(equipoRepository.findByName("sk telecom"));
+        jugadorRepository.save(josep);
+
+        Jugador pau = new Jugador("pau",LocalDate.of(1996,7,12),1,2,3,"base");
+        pau.setEquipo(equipoRepository.findByName("sk telecom"));
+        jugadorRepository.save(pau);
+
+        Jugador joan = new Jugador("joan",LocalDate.of(1995,1,3),2,3,4,"pivot");
+        joan.setEquipo(equipoRepository.findByName("sk telecom"));
+        jugadorRepository.save(joan);
+
+        Jugador alejandro = new Jugador("alejandro",LocalDate.of(1996,3,23),9,8,7,"aleron");
+        alejandro.setEquipo(equipoRepository.findByName("sk telecom"));
+        jugadorRepository.save(alejandro);
+
+        Jugador alex= new Jugador("alex",LocalDate.of(1987,10,3),8,9,5,"base");
+        alex.setEquipo(equipoRepository.findByName("fnatic"));
+        jugadorRepository.save(alex);
+
+        Jugador berjen = new Jugador("berjen",LocalDate.of(1990,3,7),5,1,2,"pivot");
+        berjen.setEquipo(equipoRepository.findByName("fnatic"));
+        jugadorRepository.save(berjen);
+
+        Jugador darien = new Jugador("darien",LocalDate.of(1989,1,10),11,6,4,"aleron");
+        darien.setEquipo(equipoRepository.findByName("fnatic"));
+        jugadorRepository.save(darien);
+
+        Jugador faker= new Jugador("faker",LocalDate.of(1993,7,17),10,10,10,"base");
+        faker.setEquipo(equipoRepository.findByName("fnatic"));
+        jugadorRepository.save(faker);
+
+        Jugador darc = new Jugador("darc",LocalDate.of(1428,12,1),1,6,0,"pivot");
+        darc.setEquipo(equipoRepository.findByName("fnatic"));
+        jugadorRepository.save(darc);
 
         System.out.println("=====================================================================================================================================================");
         //prueba
