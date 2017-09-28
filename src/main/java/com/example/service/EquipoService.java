@@ -21,10 +21,9 @@ public class EquipoService {
     public void testEquipo() {
         Equipo stucom = new Equipo("Stucom", "barcelona", LocalDate.of(1996, 12, 1));
         equipoRepository.save(stucom);
-        jugadorRepository.findByName("kelvin");
 
         Equipo moscow5 = new Equipo("Moscow 5", "moscow", LocalDate.of(2001, 2, 16));
-        equipoRepository.save(stucom);
+        equipoRepository.save(moscow5);
 
         Equipo skt = new Equipo("Sk Telecom", "korea", LocalDate.of(2004, 8, 21));
         equipoRepository.save(skt);

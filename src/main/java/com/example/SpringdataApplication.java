@@ -12,8 +12,9 @@ public class SpringdataApplication {
 	public static void main(String[] args) {
  		ConfigurableApplicationContext context = SpringApplication.run(SpringdataApplication.class, args);
 
+ 		context.getBean(EquipoService.class).testEquipo();
 		context.getBean(JugadorService.class).testJugador();
-		context.getBean(EquipoService.class).testEquipo();
+
 
 	}
 }
