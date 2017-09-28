@@ -163,6 +163,7 @@ public class JugadorService {
 
         System.out.println("=====================================================================================================================================================");
 
+        System.out.println(equipoRepository.findByLocalidad("barcelona"));
     }
 
 }
