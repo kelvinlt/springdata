@@ -12,6 +12,15 @@ public class Equipo {
     private String localidad;
     private LocalDate creacion;
 
+    public Equipo(String name, String localidad, LocalDate creacion) {
+        this.name = name;
+        this.localidad = localidad;
+        this.creacion = creacion;
+    }
+
+    public Equipo() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,12 +41,6 @@ public class Equipo {
         result = 31 * result + (localidad != null ? localidad.hashCode() : 0);
         result = 31 * result + (creacion != null ? creacion.hashCode() : 0);
         return result;
-    }
-
-    public Equipo(String name, String localidad, LocalDate creacion) {
-        this.name = name;
-        this.localidad = localidad;
-        this.creacion = creacion;
     }
 
     public Long getId() {

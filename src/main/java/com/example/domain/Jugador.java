@@ -18,9 +18,7 @@ public class Jugador {
     private String posicion;
 
     @ManyToOne
-    private Equipo team;
-
-
+    private Equipo equipo;
 
     public Jugador(String name, LocalDate birthday, Integer numCanastasTotal, Integer numAsistenciasTotal, Integer numRebotesTotal, String posicion) {
         this.name = name;
@@ -136,11 +134,11 @@ public class Jugador {
         this.posicion = posicion;
     }
 
-    public Equipo getTeam() {
-        return team;
+    public Equipo getEquipo() {
+        return equipo;
     }
 
-    public void setTeam(Equipo team) {
-        this.team = team;
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 }
