@@ -86,7 +86,7 @@ public class JugadorService {
         pablo.setEquipo(equipoRepository.findByName("sk telecom"));
         jugadorRepository.save(pablo);
 
-        Jugador josep = new Jugador("josep",LocalDate.of(1996,3,8),3,5,4,"aleron");
+        Jugador josep = new Jugador("josep",LocalDate.of(1996,3,8),3,5,4,"alero");
         josep.setEquipo(equipoRepository.findByName("sk telecom"));
         jugadorRepository.save(josep);
 
@@ -98,7 +98,7 @@ public class JugadorService {
         joan.setEquipo(equipoRepository.findByName("sk telecom"));
         jugadorRepository.save(joan);
 
-        Jugador alejandro = new Jugador("alejandro",LocalDate.of(1996,3,23),9,8,7,"aleron");
+        Jugador alejandro = new Jugador("alejandro",LocalDate.of(1996,3,23),9,8,7,"alero");
         alejandro.setEquipo(equipoRepository.findByName("sk telecom"));
         jugadorRepository.save(alejandro);
 
@@ -110,7 +110,7 @@ public class JugadorService {
         berjen.setEquipo(equipoRepository.findByName("fnatic"));
         jugadorRepository.save(berjen);
 
-        Jugador darien = new Jugador("darien",LocalDate.of(1989,1,10),11,6,4,"aleron");
+        Jugador darien = new Jugador("darien",LocalDate.of(1989,1,10),11,6,4,"alero");
         darien.setEquipo(equipoRepository.findByName("fnatic"));
         jugadorRepository.save(darien);
 
@@ -162,8 +162,13 @@ public class JugadorService {
 
 
         System.out.println("=====================================================================================================================================================");
-
-        System.out.println(equipoRepository.findByLocalidad("barcelona"));
+        System.out.println("Jugadores del equipo stucom");
+        System.out.println(jugadorRepository.findByEquipoName("stucom"));
+        System.out.println("=====================================================================================================================================================");
+        System.out.println("Jugadores del equipo moscow 5 y por posicion alero");
+        System.out.println(jugadorRepository.findByEquipoNameAndPosicion("moscow 5","alero"));
+        System.out.println("=====================================================================================================================================================");
+        System.out.println(jugadorRepository.findTopByEquipoNameOrderByNumCanastasTotalDesc("stucom"));
     }
 
 }

@@ -15,9 +15,6 @@ public class EquipoService {
     @Autowired
     private EquipoRepository equipoRepository;
 
-    @Autowired
-    private JugadorRepository jugadorRepository;
-
     public void testEquipo() {
         Equipo stucom = new Equipo("Stucom", "barcelona", LocalDate.of(1996, 12, 1));
         equipoRepository.save(stucom);
