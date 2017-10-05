@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.domain.Jugador;
+import com.example.domain.EstadisticasPosicion;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -35,5 +36,17 @@ public interface JugadorRepository extends JpaRepository<Jugador , Long>{
     List<Jugador> findByEquipoNameAndPosicion(String equipo, String posicion);
 
     Jugador findTopByEquipoNameOrderByNumCanastasTotalDesc(String equipo);
+
+    @Query("select new com.example.domain.EstadisticasPosicion(j.posicion,avg(j.numCanastasTotal), avg(j.numAsistenciasTotal), avg (j.numRebotesTotal))" +
+            "from Jugador j group by j.posicion")
+    List<EstadisticasPosicion> EstadisticasAvg();
+
+    @Query("select new com.example.domain.EstadisticasPosicion" +
+            "(j.posicion," +
+            "avg(j.numCanastasTotal),max(j.numCanastasTotal),min(j.numCanastasTotal)," +
+            "avg(j.numAsistenciasTotal),max(j.numAsistenciasTotal),min(j.numAsistenciasTotal)," +
+            "avg(j.numRebotesTotal),max(j.numRebotesTotal),min(j.numRebotesTotal)" +
+            ") from Jugador j group by j.posicion")
+    List<EstadisticasPosicion> EstadisticasFull();
 
 }

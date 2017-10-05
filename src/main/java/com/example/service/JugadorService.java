@@ -148,17 +148,22 @@ public class JugadorService {
         System.out.println(jugadorRepository.findByBirthdayBefore(LocalDate.of(1996,7,25)));
         System.out.println("=====================================================================================================================================================");
         //f
-        List<Object[]> jugadorList = jugadorRepository.AvgCanastasAsistenciasRebotesGroupByPosicion();
+        //List<Object[]> jugadorList = jugadorRepository.AvgCanastasAsistenciasRebotesGroupByPosicion();
+        //f.2
+        System.out.println(jugadorRepository.EstadisticasAvg());
+        //g
+        System.out.println(jugadorRepository.EstadisticasFull());
+        //
 
-        for (Object[] jugador : jugadorList){
-            System.out.println("=====================================================================================================================================================");
-            String pos = (String) jugador[0];
-            System.out.println("Posición: "+jugador[0]);
-            System.out.println("Canastas: "+jugador[1]);
-            System.out.println("Asistencias: "+jugador[2]);
-            System.out.println("Rebotes: "+jugador[3]);
-            System.out.println("=====================================================================================================================================================");
-        }
+//        for (Object[] jugador : jugadorList){
+//            System.out.println("=====================================================================================================================================================");
+//            String pos = (String) jugador[0];
+//            System.out.println("Posición: "+jugador[0]);
+//            System.out.println("Canastas: "+jugador[1]);
+//            System.out.println("Asistencias: "+jugador[2]);
+//            System.out.println("Rebotes: "+jugador[3]);
+//            System.out.println("=====================================================================================================================================================");
+//        }
 
 
         System.out.println("=====================================================================================================================================================");
@@ -170,5 +175,7 @@ public class JugadorService {
         System.out.println("=====================================================================================================================================================");
         System.out.println(jugadorRepository.findTopByEquipoNameOrderByNumCanastasTotalDesc("stucom"));
     }
+
+
 
 }
